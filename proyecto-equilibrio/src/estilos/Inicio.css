@@ -1,7 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
 .inicio-container {
   display: flex;
   flex-direction: column;
