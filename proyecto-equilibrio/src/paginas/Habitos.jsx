@@ -1,31 +1,47 @@
-import React from "react";
+import React, { useState } from "react";
+import { useStore } from "../store/useStore";
 import "../estilos/Habitos.css";
 
 export default function Habitos() {
+  const { habitos, toggleHabito, agregarHabito } = useStore();
+  const [nuevoHabito, setNuevoHabito] = useState("");
+
+  const manejarSubmit = (e) => {
+    e.preventDefault();
+    if (nuevoHabito.trim() !== "") {
+      agregarHabito(nuevoHabito);
+      setNuevoHabito("");
+    }
+  };
+
   return (
     <section className="habitos">
       <div className="habitos-contenedor">
         <h1>Tus Hábitos</h1>
-        <p>Organizá tus rutinas y hacé seguimiento de tus progresos.</p>
+        <p>Organizá tus rutinas y hacé seguimiento de tu progreso diario.</p>
+
+        <form onSubmit={manejarSubmit} className="form-habito">
+          <input
+            type="text"
+            placeholder="Agregar nuevo hábito..."
+            value={nuevoHabito}
+            onChange={(e) => setNuevoHabito(e.target.value)}
+          />
+          <button type="submit">Agregar</button>
+        </form>
 
         <div className="habitos-lista">
-          <div className="habito-card">
-            <h3>🧘 Meditar 10 minutos</h3>
-            <p>Un momento para desconectar y respirar.</p>
-            <button className="btn-habito">Marcar como hecho</button>
-          </div>
-
-          <div className="habito-card">
-            <h3>💧 Tomar 2L de agua</h3>
-            <p>Mantené tu cuerpo hidratado durante el día.</p>
-            <button className="btn-habito">Marcar como hecho</button>
-          </div>
-
-          <div className="habito-card">
-            <h3>🚶‍♂️ Caminar 30 minutos</h3>
-            <p>Un poco de movimiento para mejorar tu energía.</p>
-            <button className="btn-habito">Marcar como hecho</button>
-          </div>
+          {habitos.map((h) => (
+            <div
+              key={h.id}
+              className={`habito-card ${h.completado ? "hecho" : ""}`}
+            >
+              <h3>{h.nombre}</h3>
+              <button onClick={() => toggleHabito(h.id)}>
+                {h.completado ? "✅ Hecho" : "Marcar como hecho"}
+              </button>
+            </div>
+          ))}
         </div>
       </div>
     </section>
