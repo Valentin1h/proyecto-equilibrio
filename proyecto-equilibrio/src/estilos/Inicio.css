@@ -1,19 +1,62 @@
-.inicio-container {
+.inicio {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 2rem;
+  align-items: center;
+  min-height: 85vh;
   text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
 }
 
-.inicio-title {
-  font-size: 2rem;
-  font-weight: bold;
+.inicio-contenedor {
+  max-width: 700px;
+  padding: 2rem;
+}
+
+.inicio h1 {
+  font-size: 2.8rem;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
-.inicio-texto {
-  max-width: 600px;
-  line-height: 1.6;
+.inicio h1 span {
+  color: #00c896;
+}
+
+.inicio p {
+  font-size: 1.2rem;
+  color: #dcdcdc;
+  margin-bottom: 2rem;
+}
+
+.inicio-botones {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  background-color: transparent;
+  color: #00c896;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: 2px solid #00c896;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #00c896;
+  color: #121212;
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: #00c896;
+  border: 2px solid #00c896;
+}
+
+.btn-secundario:hover {
+  background-color: #00c896;
+  color: #121212;
 }
