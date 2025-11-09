@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.motivacion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+
+.motivacion-frase {
+  font-style: italic;
+  font-size: 1.4rem;
+  margin: 1.5rem 0;
+}
+
+.motivacion-boton {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.motivacion-boton:hover {
+  background-color: #45a049;
+}

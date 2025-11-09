@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
+.sueno-container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.sueno-datos {
+  margin-top: 1rem;
+  font-size: 1.1rem;
+}

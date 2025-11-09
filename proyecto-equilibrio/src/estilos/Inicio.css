@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
+.inicio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.inicio-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.inicio-texto {
+  max-width: 600px;
+  line-height: 1.6;
+}
