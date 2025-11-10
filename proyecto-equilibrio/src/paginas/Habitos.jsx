@@ -3,7 +3,7 @@ import { useStore } from "../store/useStore";
 import "../estilos/Habitos.css";
 
 export default function Habitos() {
-  const { habitos, toggleHabito, agregarHabito } = useStore();
+  const { habitos, toggleHabito, agregarHabito, eliminarHabito } = useStore();
   const [nuevoHabito, setNuevoHabito] = useState("");
 
   const manejarSubmit = (e) => {
@@ -37,9 +37,17 @@ export default function Habitos() {
               className={`habito-card ${h.completado ? "hecho" : ""}`}
             >
               <h3>{h.nombre}</h3>
-              <button onClick={() => toggleHabito(h.id)}>
-                {h.completado ? "✅ Hecho" : "Marcar como hecho"}
-              </button>
+              <div className="botones-habito">
+                <button onClick={() => toggleHabito(h.id)}>
+                  {h.completado ? "✅ Hecho" : "Marcar como hecho"}
+                </button>
+                <button
+                  className="btn-eliminar"
+                  onClick={() => eliminarHabito(h.id)}
+                >
+                  🗑️ Eliminar
+                </button>
+              </div>
             </div>
           ))}
         </div>

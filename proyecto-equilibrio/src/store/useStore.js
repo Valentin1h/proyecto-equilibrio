@@ -7,7 +7,7 @@ export const useStore = create((set) => ({
     { id: 3, nombre: "Caminar 30 minutos", completado: false },
   ],
 
-  // Marcar como hecho/no hecho
+  // Marcar o desmarcar hábito
   toggleHabito: (id) =>
     set((state) => ({
       habitos: state.habitos.map((h) =>
@@ -15,12 +15,18 @@ export const useStore = create((set) => ({
       ),
     })),
 
-  // Agregar hábito
+  // Agregar nuevo hábito
   agregarHabito: (nombre) =>
     set((state) => ({
       habitos: [
         ...state.habitos,
         { id: Date.now(), nombre, completado: false },
       ],
+    })),
+
+  // Eliminar hábito
+  eliminarHabito: (id) =>
+    set((state) => ({
+      habitos: state.habitos.filter((h) => h.id !== id),
     })),
 }));

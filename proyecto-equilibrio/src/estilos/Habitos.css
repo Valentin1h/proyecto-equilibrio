@@ -16,7 +16,6 @@
   margin-bottom: 2rem;
 }
 
-/* ----- FORMULARIO ----- */
 .form-habito {
   display: flex;
   justify-content: center;
@@ -47,12 +46,12 @@
   background-color: #00e3ac;
 }
 
-/* ----- LISTA DE HÁBITOS ----- */
 .habitos-lista {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1.5rem;
+  min-width: 250px;
 }
 
 .habito-card {
@@ -99,4 +98,24 @@
 .habito-card.hecho h3 {
   text-decoration: line-through;
   color: #77ffca;
+}
+
+.botones-habito {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn-eliminar {
+  background-color: #ff4e4e;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #ff7070;
 }
