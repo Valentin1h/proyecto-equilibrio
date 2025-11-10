@@ -1,17 +1,28 @@
 .pagina-sueno {
   padding: 2rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-width: 80vw;
+  margin: auto;
 }
 
 .form-sueno {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 10px;
   margin-bottom: 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .form-sueno input {
-  padding: 8px;
+  flex: 1;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
@@ -21,13 +32,19 @@
   color: #f3f4f6;
   border: none;
   border-radius: 8px;
-  padding: 8px 16px;
+  padding: 10px 16px;
   cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-sueno button:hover {
+  background-color: #2563eb;
 }
 
 .lista-registros {
   list-style: none;
   padding: 0;
+  width: 100%;
 }
 
 .lista-registros li {
@@ -40,4 +57,26 @@
   justify-content: space-between;
   align-items: center;
   color: #000;
+}
+
+@media (max-width: 768px) {
+  .pagina-sueno {
+    padding: 1rem;
+  }
+
+  .form-sueno {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-sueno input,
+  .form-sueno button {
+    width: 100%;
+  }
+
+  .lista-registros li {
+    width: 90%;
+    flex-direction: column;
+    gap: 4px;
+  }
 }

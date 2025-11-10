@@ -1,30 +1,71 @@
-* {
-  box-sizing: border-box;
-}
-
-.motivacion-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.motivacion {
+  text-align: center;
   padding: 2rem;
+  min-width: 70vw;
+  min-height: 85vh;
 }
 
-.motivacion-frase {
-  font-style: italic;
+.frase-container {
+  background-color: #0f1724;
+  color: #e6eef3;
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 760px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+}
+
+.frase {
   font-size: 1.4rem;
-  margin: 1.5rem 0;
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 0.8rem;
+  color: #d8f3e3;
 }
 
-.motivacion-boton {
-  background-color: #4caf50;
-  color: white;
+.autor {
+  font-weight: 700;
+  color: #9fdac6;
+  margin-bottom: 1rem;
+}
+
+.motivacion-cargando {
+  font-size: 1.1rem;
+  color: #9fb7b1;
+  margin-bottom: 1rem;
+}
+
+.motivacion-error {
+  color: #ffb4b4;
+  font-size: 0.95rem;
+  margin-top: 0.6rem;
+}
+
+.motivacion-acciones {
+  margin-top: 1rem;
+}
+
+.btn-nueva {
+  background-color: #00c896;
+  color: #07201a;
   border: none;
   border-radius: 8px;
-  padding: 0.6rem 1.2rem;
+  padding: 0.6rem 1rem;
+  font-weight: 700;
   cursor: pointer;
-  transition: background-color 0.2s;
 }
 
-.motivacion-boton:hover {
-  background-color: #45a049;
+.btn-nueva:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+@media (max-width: 600px) {
+  .frase-container {
+    padding: 1.2rem;
+    font-size: 1rem;
+  }
+  .frase {
+    font-size: 1.1rem;
+  }
 }

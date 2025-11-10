@@ -9,7 +9,7 @@ export default function Inicio() {
           Bienvenido a <span>Equilibrio</span>
         </h1>
         <p>
-          Tu espacio para mejorar tus hábitos, cuidar tu descanso y mantener tu
+          Espacio para mejorar tus hábitos, cuidar tu descanso y mantener tu
           motivación día a día.
         </p>
         <div className="inicio-botones">

@@ -2,6 +2,10 @@
   padding: 3rem 1rem;
   text-align: center;
   background-color: #181818;
+  min-height: 85vh; /**/
+  display: flex;
+  justify-content: center;
+  align-items: center;
   min-height: 85vh;
 }
 
@@ -88,7 +92,6 @@
   background-color: #00e3ac;
 }
 
-/* Estado cuando el hábito está hecho */
 .habito-card.hecho {
   background-color: #1a3d34;
   border: 2px solid #00c896;
