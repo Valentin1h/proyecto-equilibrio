@@ -1,50 +1,52 @@
 import React, { useState } from "react";
-import "../estilos/Sueno.css";
+import "../estilos/Sueño.css";
+import useSueño from "../estados/useSueño";
 
-export default function Sueno() {
-  const [horasDormidas, setHorasDormidas] = useState("");
-  const objetivo = 8; // Horas recomendadas por día
+export default function Sueño() {
+  const [fecha, setFecha] = useState("");
+  const [horas, setHoras] = useState("");
+  const { registros, agregarRegistro, eliminarRegistro } = useSueño();
 
-  // Calcular diferencia con el objetivo
-  const diferencia = objetivo - horasDormidas;
+  const manejarSubmit = (e) => {
+    e.preventDefault();
+    if (fecha && horas) {
+      agregarRegistro(fecha, horas);
+      setFecha("");
+      setHoras("");
+    }
+  };
 
   return (
-    <section className="sueno">
-      <div className="sueno-contenedor">
-        <h1>Control del Sueño 😴</h1>
-        <p>
-          Llevar un registro del descanso te ayuda a mantener equilibrio y
-          energía durante el día.
-        </p>
+    <div className="pagina-sueno">
+      <h1>Registro de Sueño</h1>
 
-        <div className="registro">
-          <label htmlFor="horas">¿Cuántas horas dormiste anoche?</label>
-          <input
-            type="number"
-            id="horas"
-            min="0"
-            max="24"
-            placeholder="Ej: 7"
-            value={horasDormidas}
-            onChange={(e) => setHorasDormidas(Number(e.target.value))}
-          />
-        </div>
+      <form onSubmit={manejarSubmit} className="form-sueno">
+        <input
+          type="date"
+          value={fecha}
+          onChange={(e) => setFecha(e.target.value)}
+        />
+        <input
+          type="number"
+          value={horas}
+          onChange={(e) => setHoras(e.target.value)}
+          placeholder="Horas dormidas"
+          min="0"
+          max="24"
+        />
+        <button type="submit">Agregar</button>
+      </form>
 
-        <div className="resultado">
-          {horasDormidas === "" ? (
-            <p>Ingresá tus horas para ver el resultado 💤</p>
-          ) : horasDormidas >= objetivo ? (
-            <p className="bien">
-              ¡Excelente! Dormiste {horasDormidas} horas, alcanzaste tu objetivo
-              👏
-            </p>
-          ) : (
-            <p className="alerta">
-              Dormiste {horasDormidas} horas, te faltaron {diferencia} horas 😴
-            </p>
-          )}
-        </div>
-      </div>
-    </section>
+      <ul className="lista-registros">
+        {registros.map((r) => (
+          <li key={r.fecha}>
+            <span>
+              {r.fecha}: {r.horas} horas
+            </span>
+            <button onClick={() => eliminarRegistro(r.fecha)}>🗑️</button>
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }

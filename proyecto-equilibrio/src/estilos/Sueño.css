@@ -1,13 +1,43 @@
-* {
-  box-sizing: border-box;
-}
-
-.sueno-container {
+.pagina-sueno {
   padding: 2rem;
   text-align: center;
 }
 
-.sueno-datos {
-  margin-top: 1rem;
-  font-size: 1.1rem;
+.form-sueno {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+}
+
+.form-sueno input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.form-sueno button {
+  background-color: #3b82f6;
+  color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.lista-registros {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-registros li {
+  background-color: #00c896;
+  margin: 8px auto;
+  padding: 8px 16px;
+  border-radius: 8px;
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
 }
